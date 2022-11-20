@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master ]
   schedule:
-    - cron:  '50 23 * * *'
+    - cron:  '59 23 * * *'
   workflow_dispatch:
 
 jobs:
@@ -28,3 +28,6 @@ jobs:
     
       - name: run
         run: STD_ID='${{ secrets.STD_ID }}' PASSWORD='${{ secrets.PASSWORD }}' python3 main.py
+      - name: run_lyz
+        run: STD_ID='${{ secrets.STD_ID_LYZ }}' PASSWORD='${{ secrets.PASSWORD_LYZ }}' python3 main.py
+      
